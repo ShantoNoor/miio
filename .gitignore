@@ -1,0 +1,8 @@
+**/.DS_Store
+**.log
+**.out
+**.exe
+**.gch
+node_modules
+yarn-error.log
+
