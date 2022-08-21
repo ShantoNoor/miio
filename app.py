@@ -19,15 +19,9 @@ sock.bind(("0.0.0.0", 12345))
 sock.sendto(bytes.fromhex(HELLO_PACKET), ('255.255.255.255', 54321))
 data, addr = sock.recvfrom(1024)
 print('Received from:', addr)
-print(data.hex())
-
-sock.sendto(bytes.fromhex(HELLO_PACKET), addr)
-data, addr = sock.recvfrom(1024)
-print('Received from:', addr)
 
 data = data.hex()
 print(data)
-
 
 # packet_payload = hex_to_byte(GET_INFO_DATA)
 packet_payload = hex_to_byte(GET_POWER_STATUS_DATA)
