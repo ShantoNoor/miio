@@ -8,3 +8,9 @@ sock.sendto(bytes.fromhex('21310020fffffffffffffffffffffffffffffffffffffffffffff
 data, addr = sock.recvfrom(1024)
 print('Received from:', addr)
 print(data.hex())
+
+sock.sendto(bytes.fromhex('21310020ffffffffffffffffffffffffffffffffffffffffffffffffffffffff'), addr)
+data, addr = sock.recvfrom(1024)
+print('Received from:', addr)
+print(data.hex())
+
