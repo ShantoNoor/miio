@@ -39,8 +39,8 @@ def gen_packet(data):
             0x21, 0x31,  # const magic value
             packet_len,
             0,  # unknown const
-            0x053de695,  # unknown const
-            0x000035ad,
+            87942805,  # unknown const
+            stamp,
             token  # overwritten by the MD5 checksum later
         )
         return head
@@ -48,7 +48,7 @@ def gen_packet(data):
     token = hb('2560f5ab98edbed5a67062108c50bb33')
     payload = hb(data)
     packet_len = len(payload) + 32
-    packet = bytearray(init_msg_head(round(time.time()), token, packet_len) + payload)
+    packet = bytearray(init_msg_head(int(time.time()/1000), token, packet_len) + payload)
     checksum = md5(packet)
     for i in range(0, 16):
         packet[i+16] = checksum[i]
