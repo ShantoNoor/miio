@@ -25,8 +25,10 @@ data = data.hex()
 print(data)
 
 # packet_payload = hex_to_byte(GET_INFO_DATA)
-# packet_payload = hex_to_byte(GET_POWER_STATUS_DATA)
-packet_payload = hex_to_byte(POWER_OFF_DATA)
+packet_payload = hex_to_byte(GET_POWER_STATUS_DATA)
+# packet_payload = hex_to_byte(POWER_OFF_DATA)
+# packet_payload = hex_to_byte(POWER_ON_DATA)
+
 packet_length = hex(len(packet_payload) + 32)[2:].rjust(4, '0')
 packet_head = hex_to_byte( data[:4] + packet_length + data[8:32] + TOKEN )
 
