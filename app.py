@@ -17,9 +17,8 @@ GET_POWER_STATUS_DATA = 'afe0e9c5e26a2a26bbba23bd452e487e47e227086b5d55aac62949c
 POWER_OFF_DATA = '6aaebcddf12b4ee2d7319208d9031fefb653297a3d2bfd56efffb0659c6b6b760e8560ffd2afd041e13ae8e8c0ad8b42'
 POWER_ON_DATA = '6aaebcddf12b4ee2d7319208d9031fefb653297a3d2bfd56efffb0659c6b6b76966833b94b9e6e8059f0de76850d358e'
 
-sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
-sock.setsockopt(socket.SOL_SOCKET, 6, 1)
-print(socket.SO_BROADCAST)
+sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
 sock.bind(("", 12345))
 
 sock.sendto(bytes.fromhex(HELLO_PACKET), ('255.255.255.255', 54321))
