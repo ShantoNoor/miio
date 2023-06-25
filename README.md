@@ -1,5 +1,5 @@
 # MIIO
 ## Create a config.py file
-python3```
+```python3
 token = '**********************'
 ```
