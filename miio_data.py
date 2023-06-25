@@ -1,9 +1,12 @@
 HELLO_PACKET = '21310020ffffffffffffffffffffffffffffffffffffffffffffffffffffffff'
 
-GET_POWER_STATUS_DATA = 'e8e0a7779c589dc2c4394c45ade32f2b107ca969c99e40a7fcf9af6503743cffe0f2d59e749b07c18703981a4363f32e'
-POWER_OFF_DATA = 'b9f710c3376ae78c70a24aafce90927c597aedf60847d705cc20a72edd558e791e7e30a9e6f7fce330f7adc5c0510864'
-POWER_ON_DATA = 'b9f710c3376ae78c70a24aafce90927c597aedf60847d705cc20a72edd558e7926f00fb15d9b7e94c92b3c2bb597c254'
+# GET_TIMER_DATA = b'{"method":"temperature","params":[],"id":1}'
 
-POWER_OFF_RES = b'26cd85776e40e7a7a57d26275f99b3c6033a0f593413a34988b7d329460b1eee'
-POWER_ON_RES = b'079b13af5b3f1436d67c855676ecfffbc0f53cb496bbdaa5cd1f91111e00922a'
-OK_RES = b'0f2dac01558dd005b2505dd235c3b0c9794ba78bccaeb55e827008bc8b4e35b5'
+GET_INFO_DATA = b'{"method":"miIO.info","params":[],"id":1}'
+GET_POWER_STATUS_DATA = b'{"method":"get_prop","params":["power","temperature","wifi_led"],"id":2}'
+POWER_OFF_DATA = b'{"method":"set_power","params":["off"],"id":3}'
+POWER_ON_DATA = b'{"method":"set_power","params":["on"],"id":3}'
+
+POWER_OFF_RES = b'{"result":["off"],"id":2}'
+POWER_ON_RES = b'{"result":["on"],"id":2}'
+OK_RES = b'{"result":["ok"],"id":3}'

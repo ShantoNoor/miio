@@ -5,4 +5,7 @@
 **.gch
 node_modules
 yarn-error.log
-
+__pycache__
+**/__pycache__
+config.py
+venv
